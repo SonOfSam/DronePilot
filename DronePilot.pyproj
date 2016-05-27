@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6758922d-0e24-4ede-aabf-6edbe0f001e4}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>mw-height-controller.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+    <InterpreterVersion />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="GrandChallenge\1-mission.py" />
+    <Compile Include="GrandChallenge\2-mission.py" />
+    <Compile Include="GrandChallenge\drop-packet-test.py" />
+    <Compile Include="GrandChallenge\sample-auto.py" />
+    <Compile Include="GrandChallenge\victoria-park.py" />
+    <Compile Include="modules\pixVehicle.py" />
+    <Compile Include="modules\pyMultiwii.py" />
+    <Compile Include="modules\pyrenn.py" />
+    <Compile Include="modules\UDPserver.py" />
+    <Compile Include="modules\utils.py" />
+    <Compile Include="modules\vehicle.py" />
+    <Compile Include="modules\vision.py" />
+    <Compile Include="modules\__init__.py" />
+    <Compile Include="mw-height-controller.py" />
+    <Compile Include="mw-hover-controller.py" />
+    <Compile Include="mw-hybrid-loiter.py" />
+    <Compile Include="mw-joystick.py" />
+    <Compile Include="mw-neural.py" />
+    <Compile Include="mw-slung-load-trajectory.py" />
+    <Compile Include="mw-slung-load.py" />
+    <Compile Include="mw-trajectory.py" />
+    <Compile Include="mw-waypoint.py" />
+    <Compile Include="pix-goto.py" />
+    <Compile Include="pix-hover-controller.py" />
+    <Compile Include="pix-joystick.py" />
+    <Compile Include="pix-logdata.py" />
+    <Compile Include="pix-pan-tilt-camera.py" />
+    <Compile Include="pix-showdata.py" />
+    <Compile Include="pix-takeoff.py" />
+    <Compile Include="pix-velocity-vector.py" />
+    <Compile Include="send-joystick.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GrandChallenge" />
+    <Folder Include="modules" />
+  </ItemGroup>
+  <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
+</Project>
