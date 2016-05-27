@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{6758922d-0e24-4ede-aabf-6edbe0f001e4}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>mw-height-controller.py</StartupFile>
+    <StartupFile>mw-trajectory.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>

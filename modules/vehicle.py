@@ -30,7 +30,7 @@ def arm_and_takeoff(vehicle, aTargetAltitude):
     while vehicle.gps_0.fix_type < 2:
         print "Waiting for GPS...:", vehicle.gps_0.fix_type
         time.sleep(1)
-		
+
     print "Arming motors"
     # Copter should arm in GUIDED mode
     vehicle.mode    = vehicle.Mode("GUIDED")
