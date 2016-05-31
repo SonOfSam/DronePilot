@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+    #!/usr/bin/env python
 """ Drone Pilot - Control of MRUAV """
 """ mw-waypoint.py: Script that sends commands to a MultiWii vehicle to follow 
     several waypoints inside the laboratory.
@@ -29,7 +29,7 @@ kt = vehicle_weight * g / (uh-u0)
 ky = 500 / pi # Yaw controller gain
 
 # MRUAV initialization
-vehicle = MultiWii("/dev/ttyUSB0")
+vehicle = MultiWii("COM3")
 vehicle.getData(MultiWii.ATTITUDE)
 
 # Position coordinates [x, y, x] 
@@ -129,8 +129,8 @@ def flight_management():
         if udp.active:
             print "UDP server is active..."
             break
-        else:
-            print "Waiting for UDP server to be active..."
+        #else:
+        #    print "Waiting for UDP server to be active..."
         time.sleep(0.5)
 
     try:

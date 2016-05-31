@@ -28,7 +28,7 @@ kt = vehicle_weight * g / (uh-u0)
 ky = 500 / pi # Yaw controller gain
 
 # MRUAV initialization
-vehicle = MultiWii("/dev/ttyUSB0")
+vehicle = MultiWii("COM3")
 
 # Position coordinates [x, y, x] 
 desiredPos = {'x':0.0, 'y':0.0, 'z':1.0} # Set at the beginning (for now...)
@@ -157,8 +157,8 @@ def control():
 
             row =   (time.time(), \
                     vehicle.attitude['angx'], vehicle.attitude['angy'], vehicle.attitude['heading'], \
-                    #vehicle.rawIMU['ax'], vehicle.rawIMU['ay'], vehicle.rawIMU['az'], vehicle.rawIMU['gx'], vehicle.rawIMU['gy'], vehicle.rawIMU['gz'], \
-                    #vehicle.rcChannels['roll'], vehicle.rcChannels['pitch'], vehicle.rcChannels['throttle'], vehicle.rcChannels['yaw'], \
+                    vehicle.rawIMU['ax'], vehicle.rawIMU['ay'], vehicle.rawIMU['az'], vehicle.rawIMU['gx'], vehicle.rawIMU['gy'], vehicle.rawIMU['gz'], \
+                    vehicle.rcChannels['roll'], vehicle.rcChannels['pitch'], vehicle.rcChannels['throttle'], vehicle.rcChannels['yaw'], \
                     udp.message[0], udp.message[1], udp.message[2], udp.message[3], \
                     currentPos['x'], currentPos['y'], currentPos['z'], desiredPos['x'], desiredPos['y'], desiredPos['z'], \
                     udp.message[11], udp.message[13], udp.message[12], \

@@ -5,14 +5,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{6758922d-0e24-4ede-aabf-6edbe0f001e4}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>mw-trajectory.py</StartupFile>
+    <StartupFile>mw-test-comunication.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <InterpreterId />
-    <InterpreterVersion />
+    <InterpreterId>{2af0f10d-7135-4994-9156-5d01c9c11b7e}</InterpreterId>
+    <InterpreterVersion>2.7</InterpreterVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
@@ -41,6 +41,9 @@
     <Compile Include="mw-neural.py" />
     <Compile Include="mw-slung-load-trajectory.py" />
     <Compile Include="mw-slung-load.py" />
+    <Compile Include="mw-test-comunication.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="mw-trajectory.py" />
     <Compile Include="mw-waypoint.py" />
     <Compile Include="pix-goto.py" />
@@ -56,6 +59,9 @@
   <ItemGroup>
     <Folder Include="GrandChallenge" />
     <Folder Include="modules" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\2.7" />
   </ItemGroup>
   <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />

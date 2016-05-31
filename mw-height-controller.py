@@ -27,7 +27,7 @@ uh = 1360 # Hover throttle command
 kt = vehicle_weight * g / (uh-u0)
 
 # MRUAV initialization
-vehicle = MultiWii("/dev/ttyUSB0")
+vehicle = MultiWii("COM3")
 
 # Position coordinates [x, y, x] 
 desiredPos = {'z':1.0} # Set at the beginning
@@ -62,8 +62,8 @@ def control():
         if udp.active:
             print "UDP server is active..."
             break
-        else:
-            print "Waiting for UDP server to be active..."
+        #else:
+        #    print "Waiting for UDP server to be active..."
         time.sleep(0.5)
 
     try:
@@ -81,10 +81,13 @@ def control():
 
             # Update joystick commands from UDP communication, order (roll, pitch, yaw, throttle)
             rcCMD[0] = udp.message[0]
+            print rcCMD[0]
             rcCMD[1] = udp.message[1]
+            print rcCMD[1]
             rcCMD[2] = udp.message[2]
+            print rcCMD[2]
             rcCMD[3] = udp.message[3]
-
+            print rcCMD[3]
             # Update current position of the vehicle
             #currentPos['z'] = sonarReading
 

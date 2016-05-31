@@ -56,6 +56,7 @@ class twistedUDP(DatagramProtocol):
         global message, active
         active = True
         # In case of failure on receiving, check this:
+        #print data
         numOfValues = len(data) / 8
         mess=struct.unpack('>' + 'd' * numOfValues, data)
         message = [ round(element,6) for element in mess ]
@@ -68,6 +69,6 @@ class twistedUDP(DatagramProtocol):
 
 def startTwisted():
     l = task.LoopingCall(timeout)
-    l.start(0.5) # Check for disconnection each 0.5 and send neutral commands
+    l.start(5) # Check for disconnection each 0.5 and send neutral commands
     reactor.listenUDP(UDPport, twistedUDP())
     reactor.run()
